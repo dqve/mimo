@@ -1,0 +1,213 @@
+
+.bg-wrapper h1,
+h2,
+h3 {
+  font-family: "Helvetica Neue";
+  color: white;
+  font-size: 14vw;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  margin: 0;
+}
+
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue";
+  color: white;
+}
+
+.bg-wrapper h3 {
+  font-size: 4vw;
+}
+
+.bg-wrapper h2 {
+  font-size: 3vw;
+}
+
+.bg-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.centered {
+  position: fixed;
+  top: 42.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: default;
+}
+
+.top-right {
+  position: fixed;
+  top: 3vh;
+  right: 4vh;
+}
+
+.top-left {
+  position: fixed;
+  top: 3vh;
+  left: 4vh;
+}
+
+.bottom-third {
+  position: fixed;
+  top: 72.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.block-text h1,
+h2 {
+  display: inline;
+}
+
+.quote {
+  font-family: "Helvetica Neue";
+  color: white;
+  font-size: 2vw;
+  letter-spacing: 1px;
+  line-height: 1;
+  margin: 0;
+  cursor: default;
+}
+
+#quote-text {
+  font-size: 2vw;
+}
+
+#location {
+  margin-top: 5px
+}
+
+.weather {
+  font-family: "Helvetica Neue";
+  color: white;
+  font-size: 2.75vw;
+  letter-spacing: 1px;
+  line-height: 1;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Settings */
+.bottom-right {
+  position: fixed;
+  bottom: 2vh;
+  right: 3.5vh;
+}
+
+#settings-text {
+  font-family: "Helvetica Neue";
+  color: white;
+  font-size: 1.5vw;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  margin: 0;
+}
+
+#vc-text {
+  font-family: "Helvetica Neue";
+  color: white;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.fa {
+  position: relative;
+  padding-right: 3px;
+}
+
+.version {
+  font-style: italic;
+  padding-right: 5px;
+}
+
+#root {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  padding:10px;
+  background:white;
+  border-radius:3px;
+  min-width:170px;
+  margin-bottom: 20px auto;
+  position: relative;
+  margin-right: 60px;
+  
+  }
+  
+.verse-content {
+  padding:10px;
+  background:white;
+  border-radius:3px;
+  min-width:170px;
+  margin-top: 20px auto;
+  position: relative;
+  margin-left: 60px;
+  
+  }
+
+.black {
+  background:grey;
+  opacity: 60%;
+  text-align: left;
+  font-size: 1.25vw;
+}
+.black h3 {color: black;}
+
+.link {
+  color: white;
+}
+
+/* mouse over link */
+.black a:hover {
+  color: darkgrey;
+  text-decoration: none;
+}
+
+
+
+
+.cont {
+  padding:5px;
+  background:white;
+  border-radius:1px;  
+  }
+  
+.bla {
+  background:black;
+  opacity: 80%;
+  text-align: center;
+  font-size: 1vw;
+  color: white;
+  margin-bottom: 10px;
+}
+
+
+.pro{
+  color: black;
+  font-size: 1.5vw;
+
+}
+
+.pro a:hover{
+  color: white;
+}
+
+
+.no-point {
+  list-style-type: none;
+}
+
+.go {
+  cursor: pointer;
+  font-size: 1.5vw;
+}
