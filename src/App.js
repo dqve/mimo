@@ -186,7 +186,6 @@ class Elijah extends Component {
     }
 
     return (
-      
       <div style={this.getBGStyle(this.state.category)}>
       
         <div className="bg-wrapper">
