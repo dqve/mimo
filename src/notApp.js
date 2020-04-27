@@ -207,4 +207,4 @@ class MiCasa extends Component {
   }
 }
 
-export default MiCasa;
+export default mimo;

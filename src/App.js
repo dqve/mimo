@@ -1,15 +1,8 @@
-import React, {
-    Component
-} from 'react';
-import {
-    DateTime
-} from 'luxon';
+import React, {Component} from 'react';
+import {DateTime} from 'luxon';
 import Modal from 'react-modal';
 import Popover from 'react-awesome-popover';
-import {
-    Motion,
-    spring
-} from 'react-motion';
+import { Motion, spring } from 'react-motion';
 import FadeIn from 'react-fade-in';
 import './App.css';
 import './quest-and-load.css';
@@ -33,7 +26,7 @@ const customStyles = {
     }
 };
 
-class Elijah extends Component {
+class mimo extends Component {
     constructor() {
         super();
 
@@ -203,298 +196,125 @@ class Elijah extends Component {
     }
 
     render() {
-        const {
-            isLoading
-        } = this.state;
-        if (isLoading) {
-            return <div class = "body" > < div class = "lds-ripple" > < div > < /div><div></div > < /div></div > ;
-        }
-
-        return ( <
-            div style = {
-                this.getBGStyle(this.state.category)
-            } >
-
-            <
-            div className = "bg-wrapper" >
-            <
-            FadeIn delay = {
-                25
-            } >
-            <
-            div className = "text-right top-right weather" >
-            <
-            Popover className = "top-right"
-            action = "hover"
-            placement = "bottom-center"
-            overlayColor = "none"
-            arrowProps = {
-                {
-                    style: {
-                        opacity: "0"
-                    }
-                }
-            } >
-            <
-            div className = "text-right top-right weather" >
-            <
-            div >
-            <
-            i className = {
-                `wi ${this.state.weatherIcon}`
+            const {
+                isLoading
+            } = this.state;
+            if (isLoading) {
+                return <div class = "body" > < div class = "lds-ripple" > < div > < /div><div></div > < /div></div > ;
             }
-            />&nbsp;<span id="weather" / > {
-                this.state.temperature
-            } & #730;
+
+            return (
+        <div style={this.getBGStyle(this.state.category)}>
+        
+          <div className="bg-wrapper">
+          <FadeIn delay={25}>
+          <div className="text-right top-right weather">
+          <Popover className="top-right" action="hover" placement="bottom-center" overlayColor="none" arrowProps={{ style: { opacity: "0" } }}>
+            <div className="text-right top-right weather">
+              <div>
+                <i className={`wi ${this.state.weatherIcon}`} />&nbsp;<span id="weather" />
+                {this.state.temperature}&#730;
+              </div>
+              <h5 id="location">{this.state.location}</h5>
             </div>
-            <h5 id= "location" > {
-                this.state.location
-            } < /h5> <
-            /div> <
-            p className = "cont bla" > {
-                this.state.weatherType
-            } < /p> <
-            /Popover> <
-            /div> <
-            div className = "text-left top-left" >
-            <
-            div id = "vc-text" >
-            <
-            Popover placement = "bottom-center"
-            overlayColor = "rgba(0,0,0,0.1)"
-            overlayOpacity = "0.3"
-            arrowProps = {
-                {
-                    style: {
-                        color: "darkGrey",
-                        opacity: "0.4"
-                    }
-                }
-            } >
-            <
-            a role = "button" >
-            <
-            Popover action = "hover"
-            placement = "bottom-center"
-            overlayColor = "none"
-            arrowProps = {
-                {
-                    style: {
-                        opacity: "0"
-                    }
-                }
-            } >
-            <
-            h6 > < i class = "fa fa-bookmark-o" > < /i> Verse control{" "}</h
-            6 >
-            <
-            p className = "cont bla" > Settings available on pro < /p> <
-            /Popover> <
-            /a> <
-            Motion defaultStyle = {
-                {
-                    opacity: 5
-                }
-            }
-            style = {
-                {
-                    opacity: spring(1)
-                }
-            } > {
-                style => {
-                    return ( <
-                        div className = "verse-content black" >
-                        <
-                        a href = "#"
-                        className = "link" > < Popover action = "hover"
-                        placement = "bottom-center"
-                        overlayColor = "none"
-                        arrowProps = {
-                            {
-                                style: {
-                                    opacity: "0"
-                                }
-                            }
-                        } >
-                        <
-                        b > < i class = "fa fa-book" > < /i>  Version</b >
-                        <
-                        p className = "cont bla" > Settings available on pro < /p> <
-                        /Popover></a >
-                        <
-                        br / >
-                        <
-                        a href = "#"
-                        className = "link" > < b > < i class = "fa fa-calendar-check-o" > < /i>  Reading plans</b > < /a> <
-                        br / > < br / >
-                        <
-                        a href = "#"
-                        className = "link" > < b > < td > < i class = "fa fa-cubes" > < /i></td > < td > Category < /td></b > < /a> <
-                        br / > < br / >
-                        <
-                        a href = "#"
-                        className = "link" > < b > < td > < i class = "fa fa-bookmark" > < /i></td > < td > Favorites < /td></b > < /a> <
-                        br / >
-                        <
-                        /div>
-                    );
-                }
-            } <
-            /Motion> <
-            /Popover> <
-            /div> <
-            /div> <
-            div className = "text-center centered" >
-            <
-            div className = "block-text" >
-            <
-            h1 id = "time" > {
-                this.state.time.toFormat("h':'mm")
-            } < /h1> <
-            h2 id = "ampm" > {
-                this.state.time.toFormat('a')
-            } < /h2> <
-            /div> <
-            h3 id = "greetings" >
-            Good {
-                this.state.salutation
-            }, {
-                this.state.name
-            } <
-            /h3> <
-            Modal isOpen = {
-                this.state.modalIsOpen
-            }
-            style = {
-                customStyles
-            }
-            contentLabel = "name-modal"
-            transparent = {
-                true
-            }
-            backgroundOpacity = "8" >
-            <
-            input type = "text"
-            name = "name"
-            class = "question"
-            id = "nme"
-            required autocomplete = "off"
-            onChange = {
-                this.handleChange
-            }
-            /> <
-            label
-            for = "nme" > < span class = "first" > What 's your name?</span><i class="fa fa-arrow-right go" onClick={this.closeModal}></i></label>&nbsp; <
-            /Modal> <
-            /div> <
-            div className = "text-center bottom-third quote" >
-            <
-            div id = "quote-text" > "{this.state.quote}" - {
-                this.state.verse
-            } < span class = "version" > & copy; {
-                this.state.version
-            } < /span>  <
-            /div> <
-            /div>
-
-            <
-            div className = "text-right bottom-right" >
-            <
-            div id = "settings-text" >
-            <
-            Popover placement = "top-center"
-            overlayColor = "rgba(0,0,0,0.1)"
-            overlayOpacity = "0.3"
-            arrowProps = {
-                {
-                    style: {
-                        color: "darkGrey",
-                        opacity: "0.4"
-                    }
-                }
-            } >
-            <
-            a role = "button" >
-            <
-            Popover action = "hover"
-            placement = "auto"
-            overlayColor = "none"
-            arrowProps = {
-                {
-                    style: {
-                        opacity: "0"
-                    }
-                }
-            } >
-            <
-            h6 > < i class = "fa fa-cog" > < /i>Settings{" "}</h
-            6 >
-            <
-            p className = "cont bla" > Settings coming soon < /p> <
-            /Popover> <
-            /a> <
-            Motion defaultStyle = {
-                {
-                    opacity: 5
-                }
-            }
-            style = {
-                {
-                    opacity: spring(1)
-                }
-            } > {
-                style => {
-                    return ( <
-                        div className = "content black" >
-                        <
-                        a href = "#"
-                        className = "link" > < Popover action = "hover"
-                        placement = "auto"
-                        overlayColor = "none"
-                        arrowProps = {
-                            {
-                                style: {
-                                    opacity: "0"
-                                }
-                            }
-                        } >
-                        <
-                        b > < i class = "fa fa-wrench" > < /i> General</b >
-                        <
-                        p className = "cont bla" > Settings coming soon < /p> <
-                        /Popover></a >
-                        <
-                        br / >
-                        <
-                        a href = "#"
-                        className = "link" > < b > < i class = "fa fa-file-photo-o" > < /i> Photos</b > < /a> <
-                        br / > < br / >
-                        <
-                        a href = "#"
-                        className = "link" > < b > < i class = "fa fa-cloud" > < /i> Weather</b > < /a> <
-                        br / > < br / >
-                        <
-                        span className = "pro" > < a href = "#"
-                        class = "pro" > < b > < i class = "fa fa-arrow-circle-up" > < /i> Go pro</b > < /a></span >
-                        <
-                        br / >
-                        <
-                        /div>
-                    );
-                }
-            } <
-            /Motion> <
-            /Popover> <
-            /div> <
-            /div> <
-            /FadeIn> <
-            /div>
-
-            <
-            /div>
-
-        );
+           <p className="cont bla">{this.state.weatherType}</p>
+      </Popover>
+      </div>
+            <div className="text-left top-left">
+            <div id="vc-text">
+             <Popover placement="bottom-center" overlayColor="rgba(0,0,0,0.1)" overlayOpacity="0.3" arrowProps={{ style: { color: "darkGrey", opacity: "0.4" } }}>
+      <a role="button">
+      <Popover action="hover" placement="bottom-center" overlayColor="none" arrowProps={{ style: { opacity: "0" } }}>
+        <h6><i class="fa fa-bookmark-o"></i> Verse control{" "}</h6>
+      <p className="cont bla">Settings available on pro</p>
+      </Popover>
+      </a>
+     <Motion defaultStyle={{ opacity: 5 }} style={{ opacity: spring(1) }}>
+        {style => {  
+          return (
+           <div className="verse-content black">
+           <a href="#" className="link"><Popover action="hover" placement="bottom-center" overlayColor="none" arrowProps={{ style: { opacity: "0" } }}>
+        <b><i class="fa fa-book"></i>  Version</b>
+        <p className="cont bla">Settings available on pro</p>
+      </Popover></a>
+                  <br/>
+                  <a href="#" className="link"><b><i class="fa fa-calendar-check-o"></i>  Reading plans</b></a>
+                  <br/><br/>
+                  <a href="#" className="link"><b><td><i class="fa fa-cubes"></i></td><td>Category</td></b></a>
+                  <br/><br/>
+                  <a href="#" className="link"><b><td><i class="fa fa-bookmark"></i></td>  <td>   Favorites</td></b></a>
+                  <br/>
+                </div>
+                 );
+        }}
+        </Motion>
+        </Popover>
+              </div>
+            </div>
+            <div className="text-center centered">
+              <div className="block-text">
+                <h1 id="time">{this.state.time.toFormat("h':'mm")}</h1>
+                <h2 id="ampm">{this.state.time.toFormat('a')}</h2>
+              </div>
+              <h3 id="greetings">
+                Good {this.state.salutation}, {this.state.name}
+              </h3>
+              <Modal
+                isOpen={this.state.modalIsOpen}
+                style={customStyles}
+                contentLabel="name-modal"
+                transparent={true}
+                backgroundOpacity = "8"
+              >
+               <input type="text" name="name" class="question" id="nme" required autocomplete="off" 
+               onChange={this.handleChange} 
+               />
+    <label for="nme"><span class="first">What's your name?</span><i class="fa fa-arrow-right go" onClick={this.closeModal}></i></label>&nbsp;
+              </Modal>
+            </div>
+            <div className="text-center bottom-third quote">
+              <div id="quote-text">"{this.state.quote}" - {this.state.verse}<span class="version">    &copy;{this.state.version}</span> 
+               </div>
+            </div>
+            
+          <div className="text-right bottom-right">
+            <div id="settings-text">
+             <Popover placement="top-center" overlayColor="rgba(0,0,0,0.1)" overlayOpacity="0.3" arrowProps={{ style: { color: "darkGrey", opacity: "0.4" } }}>
+      <a role="button">
+      <Popover action="hover" placement="auto" overlayColor="none" arrowProps={{ style: { opacity: "0" } }}>
+        <h6><i class="fa fa-cog"></i>Settings{" "}</h6>
+        <p className="cont bla">Settings coming soon</p>
+        </Popover>
+      </a>
+     <Motion defaultStyle={{ opacity: 5 }} style={{ opacity: spring(1) }}>
+        {style => {  
+          return (
+           <div className="content black">
+           <a href="#" className="link"><Popover action="hover" placement="auto" overlayColor="none" arrowProps={{ style: { opacity: "0" } }}>
+        <b><i class="fa fa-wrench"></i> General</b>
+        <p className="cont bla">Settings coming soon</p>
+      </Popover></a>
+                  <br/>
+                  <a href="#" className="link"><b><i class="fa fa-file-photo-o"></i> Photos</b></a>
+                  <br/><br/>
+                  <a href="#" className="link"><b><i class="fa fa-cloud"></i> Weather</b></a>
+                  <br/><br/>
+                  <span className="pro"><a href="#" class="pro"><b><i class="fa fa-arrow-circle-up"></i> Go pro</b></a></span>
+                  <br/>
+                </div>
+                 );
+        }}
+        </Motion>
+        </Popover>
+              </div>
+            </div>
+            </FadeIn>
+          </div>
+          
+        </div>
+        
+      );
     }
-}
+  }
 
-export default Elijah;
+  export default mimo;
