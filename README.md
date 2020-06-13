@@ -1,2 +1,2 @@
 # mimo (formerly Elijah)
-Web dashboard for spiritual edification
+Web Browser dashboard for edification
